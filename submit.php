@@ -1,14 +1,27 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  $firstName = $_POST["first-name"];
+  $lastName = $_POST["last-name"];
+  $email = $_POST["email"];
+  $phone = $_POST["phone"];
+  $message = $_POST["message"];
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$subject = $_POST['subject'];
-$message = $_POST['message'];
+  // Create the email content
+  $subject = "New Contact Form Submission";
+  $emailContent = "First Name: " . $firstName . "\n";
+  $emailContent .= "Last Name: " . $lastName . "\n";
+  $emailContent .= "Email: " . $email . "\n";
+  $emailContent .= "Phone: " . $phone . "\n";
+  $emailContent .= "Message: " . $message . "\n";
 
-$mailheader = "From:".$name."<".$email.">\r\n";
+  // Send the email
+  $to = "your-email@example.com"; // Replace with your own email address
+  $headers = "From: " . $email;
 
-$recipient = "sikhfamily9@gmail.com";
-
-mail($recipient, $subject, $message, $mailheader) or die("Error!");
-
-echo'
+  if (mail($to, $subject, $emailContent, $headers)) {
+    echo "Email sent successfully.";
+  } else {
+    echo "Failed to send email.";
+  }
+}
+?>
