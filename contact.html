@@ -5,49 +5,23 @@
 </head>
 <body>
   <h1>Contact Us</h1>
-  <form id="contact-form">
+  <form id="contact-form" method="POST" action="submit.php">
     <label for="first-name">First Name:</label>
-    <input type="text" id="first-name" required><br>
+    <input type="text" id="first-name" name="first-name" required><br>
 
     <label for="last-name">Last Name:</label>
-    <input type="text" id="last-name" required><br>
+    <input type="text" id="last-name" name="last-name" required><br>
 
     <label for="email">Email:</label>
-    <input type="email" id="email" required><br>
+    <input type="email" id="email" name="email" required><br>
 
     <label for="phone">Phone:</label>
-    <input type="tel" id="phone" required><br>
+    <input type="tel" id="phone" name="phone" required><br>
 
     <label for="message">Message:</label><br>
-    <textarea id="message" required></textarea><br>
+    <textarea id="message" name="message" required></textarea><br>
 
     <input type="submit" value="Submit">
   </form>
-
-  <script>
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent form submission
-      var firstName = document.getElementById("first-name").value;
-      var lastName = document.getElementById("last-name").value;
-      var email = document.getElementById("email").value;
-      var phone = document.getElementById("phone").value;
-      var message = document.getElementById("message").value;
-
-      // You can perform further validations here if needed
-
-      // Display submitted data
-      console.log("First Name:", firstName);
-      console.log("Last Name:", lastName);
-      console.log("Email:", email);
-      console.log("Phone:", phone);
-      console.log("Message:", message);
-
-      // You can send the data to a server for further processing here
-
-      // Optionally, show a success message or redirect to a thank you page
-      alert("Form submitted successfully!");
-      // window.location.href = "thank_you.html";
-    });
-  </script>
 </body>
 </html>
