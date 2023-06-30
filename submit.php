@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $emailContent .= "Message: " . $message . "\n";
 
   // Send the email
-  $to = "your-email@example.com"; // Replace with your own email address
+  $to = "sikhfamily9@gmail.com"; // Replace with your own email address
   $headers = "From: " . $email;
 
   if (mail($to, $subject, $emailContent, $headers)) {
