@@ -25,3 +25,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+</head>
+<body>
+  <h1>Contact Form</h1>
+  <form method="POST" action="">
+    <label for="first-name">First Name:</label>
+    <input type="text" id="first-name" name="first-name" required><br>
+
+    <label for="last-name">Last Name:</label>
+    <input type="text" id="last-name" name="last-name" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" required><br>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
